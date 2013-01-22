@@ -1,0 +1,17 @@
+class SessionsController < ApplicationController
+  def new
+  end
+
+  def login
+  end
+
+  def logout
+  end
+
+  def user_status
+  end
+
+  def toolkit_oauth_callback
+  end
+
+end
