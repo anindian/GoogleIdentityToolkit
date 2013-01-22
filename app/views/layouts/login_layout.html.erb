@@ -25,9 +25,15 @@
         homeUrl: "/",
         logoutUrl: "/logout",
         idps: ["Gmail", "Yahoo", "Hotmail", "AOL"],
+        idpConfig: {Hotmail: {scopes: ["wl.signin", "wl.basic", "wl.birthday", "wl.emails"]}},
         tryFederatedFirst: true,
-        useContextParam: false,
-        language: "en"
+        useContextParam: true,
+        language: "en",
+        acUiConfig: {
+          title: 'GITKit V2 Demo',
+          favicon: 'http://gitkit.sowgandhi.com/images/rails.png',
+          branding: 'http://gitkit.sowgandhi.com/new'
+        }
     });
     window.google.identitytoolkit.init();
     });

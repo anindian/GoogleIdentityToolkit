@@ -14,7 +14,7 @@
     var account = {
       email: '<%= session[:user][:email] %>',
       displayName: '<%= session[:user][:display_name] %>',
-      photoUrl: 'https://dev.weunite.com/images/avatar.png'
+      photoUrl: '<%= session[:user][:image] %>'
     };
     // Store the account then return to homeUrl.
     window.google.identitytoolkit.storeAccount(account, homeUrl);

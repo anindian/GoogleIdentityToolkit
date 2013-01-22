@@ -33,12 +33,12 @@ class SessionsController < ApplicationController
     }
     
     api_url = "https://www.googleapis.com/identitytoolkit/v1/relyingparty/" +
-      "verifyAssertion?key=AIzaSyD3CnxRTsOxl8UEnN9gcCjRShhWroIUYKQ"
+      "verifyAssertion?key=AIzaSyAtcjk0CNgQ1LI2y2svk0GIPv82dFe2NjA"
     
     assertion = get_assertion(api_url, api_params)
     
     unless assertion.nil?
-      session[:user] = {:first_name => assertion["firstName"], :last_name => assertion["lastName"], :display_name => assertion["displayName"], :email => assertion["verifiedEmail"]}
+      session[:user] = {:first_name => assertion["firstName"], :last_name => assertion["lastName"], :display_name => assertion["displayName"], :email => assertion["verifiedEmail"], :image => assertion["photoUrl"] || "https://dev.weunite.com/images/avatar.png"}
     else
       redirect_to "/" and return
     end
